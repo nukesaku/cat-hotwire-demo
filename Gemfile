@@ -45,8 +45,9 @@ gem "bootsnap", require: false
 # Use Sass to process CSS
 # gem "sassc-rails"
 
-gem "kaminari"
-gem "ransack"
+gem "kaminari" # ページネーション
+gem "ransack" # 検索機能
+gem "bootstrap_form" # インラインバリデーションエラー表示
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
