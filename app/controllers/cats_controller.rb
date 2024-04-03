@@ -40,8 +40,7 @@ class CatsController < ApplicationController
   # PATCH/PUT /cats/1
   def update
     if @cat.update(cat_params)
-      # 成功時は/cats/:id（つまりcats#show）にリダイレクトする
-      redirect_to @cat, notice: "ねこを更新しました。", status: :see_other
+      # リダイレクトを削除（リダイレクトがないと暗黙的に`render`が実行される）
     else
       render :edit, status: :unprocessable_entity
     end
