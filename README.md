@@ -1,24 +1,22 @@
-# README
+# ネコのhotwireデモ
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+このデモは、[Hotwire](https://hotwired.dev/)を使ったチュートリアルです。
 
-Things you may want to cover:
+## インストール
+```bash
+$ git clone []
+$ cd hotwire-demo
+$ docker-compose up
+$ docker-compose exec web bash
+$ bundle install
+$ rails db:create
+$ rails db:migrate
+$ rails db:seed
+```
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## 使い方
+```bash
+$ docker-compose exec web bash
+$ bin/dev
+```
+ブラウザで`http://localhost:3000`にアクセスしてください。
