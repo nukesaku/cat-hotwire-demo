@@ -1,12 +1,14 @@
-<div id="<%= dom_id dog %>">
-  <p>
-    <strong>Name:</strong>
+<div class="row py-2 border-top">
+  <div class="col-4 my-auto">
     <%= dog.name %>
-  </p>
-
-  <p>
-    <strong>Age:</strong>
+  </div>
+  <div class="col-4 my-auto">
     <%= dog.age %>
-  </p>
-
+  </div>
+  <div class="col-4">
+    <div class="d-flex justify-content-end">
+      <%= link_to "詳細", dog_path(dog), class: "btn btn-sm btn-outline-primary me-2", data: { turbo: false } %>
+      <%= button_to "削除", dog, method: :delete, class: "btn btn-sm btn-outline-danger", form: { data: { turbo_confirm: "本当に削除しますか？" } } %>
+    </div>
+  </div>
 </div>

@@ -4,6 +4,9 @@
 
 import { application } from "./application"
 
+import DogModalController from "./dog_modal_controller"
+application.register("dog-modal", DogModalController)
+
 import FormController from "./form_controller"
 application.register("form", FormController)
 

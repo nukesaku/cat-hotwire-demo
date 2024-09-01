@@ -3,7 +3,9 @@ class DogsController < ApplicationController
 
   # GET /dogs
   def index
-    @dogs = Dog.all
+    @search = Dog.ransack(params[:q])
+    @search.sorts = 'id desc' if @search.sorts.empty?
+    @dogs = @search.result.page(params[:page])
   end
 
   # GET /dogs/1
@@ -33,9 +35,10 @@ class DogsController < ApplicationController
   # PATCH/PUT /dogs/1
   def update
     if @dog.update(dog_params)
-      redirect_to @dog, notice: "Dog was successfully updated.", status: :see_other
+      flash.now.notice = "いぬを更新しました。"
     else
-      render :edit, status: :unprocessable_entity
+      flash.now.alert = "いぬの更新に失敗しました。"
+      render :show, status: :unprocessable_entity
     end
   end
 

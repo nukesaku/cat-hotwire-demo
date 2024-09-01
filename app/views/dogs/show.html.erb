@@ -1,10 +1,14 @@
 <p style="color: green"><%= notice %></p>
 
-<%= render @dog %>
+<%= render 'show_dog', dog: @dog %>
 
 <div>
-  <%= link_to "Edit this dog", edit_dog_path(@dog) %> |
-  <%= link_to "Back to dogs", dogs_path %>
+  <div class="row">
+    <div class="col-4">
+      <%= button_tag "編集", class: "btn btn-sm btn-outline-primary me-4", data: { bs_toggle: 'modal', bs_target: '#dog-modal' } %>
+      <%= link_to "戻る", dogs_path, class: "btn btn-sm btn-outline-info" %>
+    </div>
+  </div>
 
-  <%= button_to "Destroy this dog", @dog, method: :delete %>
+  <%= button_to "削除", @dog, method: :delete, class: "btn btn-sm btn-outline-danger mt-2" %>
 </div>

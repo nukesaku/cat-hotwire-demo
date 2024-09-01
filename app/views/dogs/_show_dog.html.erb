@@ -1,0 +1,26 @@
+<div id="<%= dom_id dog %>">
+  <p>
+    <strong>Name:</strong>
+    <%= dog.name %>
+  </p>
+
+  <p>
+    <strong>Age:</strong>
+    <%= dog.age %>
+  </p>
+
+</div>
+
+<div class="modal fade" id="dog-modal" data-controller="dog-modal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">編集</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <%= render 'form', dog: dog %>
+      </div>
+    </div>
+  </div>
+</div>
