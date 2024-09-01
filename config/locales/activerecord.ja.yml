@@ -2,7 +2,11 @@ ja:
   activerecord:
     models:
       cat: ねこ
+      dog: いぬ
     attributes:
       cat:
+        name: 名前
+        age: 年齢
+      dog:
         name: 名前
         age: 年齢
