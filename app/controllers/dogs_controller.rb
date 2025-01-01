@@ -26,7 +26,6 @@ class DogsController < ApplicationController
     @dog = Dog.new(dog_params)
 
     if @dog.save
-      @dog.broadcast_prepend_to("dogs")
       flash.now.notice = "いぬを登録しました。"
     else
       render :new, status: :unprocessable_entity
@@ -36,7 +35,6 @@ class DogsController < ApplicationController
   # PATCH/PUT /dogs/1
   def update
     if @dog.update(dog_params)
-      @dog.broadcast_replace_to("dogs")
       flash.now.notice = "いぬを更新しました。"
     else
       flash.now.alert = "いぬの更新に失敗しました。"
@@ -47,7 +45,6 @@ class DogsController < ApplicationController
   # DELETE /dogs/1
   def destroy
     @dog.destroy
-    @dog.broadcast_remove_to("dogs")
     flash.now.notice = "いぬを削除しました。"
   end
 
